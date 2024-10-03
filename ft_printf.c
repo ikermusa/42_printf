@@ -16,7 +16,9 @@ int	ft_printf(char const *input, ...)
 {
 	va_list	args;
 	int		i;
+	int		print_ln;
 
+	print_ln = 0;
 	i = 0;
 	va_start(args, input);
 	while (input[i])
@@ -24,17 +26,22 @@ int	ft_printf(char const *input, ...)
 		if (input[i] == '%' && input[i + 1])
 		{
 			i++;
-
+			print_ln += /*falta imprimir lo que viene despues del % y */;
+		}
+		else
+		{
+			ft_putchar(input[i]);
+			print_ln++;
 		}
 		i++;
 	}
 	va_end(args);
-	return (1);
+	return (print_ln);
 }
 
-int	main(void)
+/* int	main(void)
 {
 
 
 	return (0);
-}
+} */

@@ -1,31 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   print_str.c                                        :+:      :+:    :+:   */
+/*   print_nbr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: imusatad <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/03 14:36:49 by imusatad          #+#    #+#             */
-/*   Updated: 2024/10/03 14:54:43 by imusatad         ###   ########.fr       */
+/*   Created: 2024/10/03 14:56:23 by imusatad          #+#    #+#             */
+/*   Updated: 2024/10/03 14:56:37 by imusatad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-int	print_str(char *str)
+int	ft_putnbr(int n)
 {
-	int	len;
+	int		len;
+	char	c;
 
 	len = 0;
-	if (!str)
+	if (n == -2147483648)
 	{
-		ft_putstr("(null)");
-		return (6);
+		ft_putstr("-2147483648");
+		return (11);
 	}
-	while (str[len])
+	if (n < 0)
 	{
-		write(1, &str[len], 1);
+		ft_putchar('-');
 		len++;
+		n = -n;
 	}
-	return (len);
+	if (n >= 10)
+		len += ft_putnbr(n / 10);
+	c = (n % 10) + '0';
+	ft_putchar(c);
+	return (len + 1);
 }
