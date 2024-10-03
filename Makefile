@@ -1,9 +1,9 @@
-NAME = libftprintf.a
+NAME = printf.a
 
 CC = gcc
 CFLAGS = -Wall -Wextra -Werror
 
-SRC			= 
+SRC			= ft_printf.c
 
 
 OBJ = $(SRC:.c=.o)

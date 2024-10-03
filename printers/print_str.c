@@ -1,40 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.c                                        :+:      :+:    :+:   */
+/*   print_str.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: imusatad <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/02 14:25:55 by imusatad          #+#    #+#             */
-/*   Updated: 2024/10/02 14:26:05 by imusatad         ###   ########.fr       */
+/*   Created: 2024/10/03 14:36:49 by imusatad          #+#    #+#             */
+/*   Updated: 2024/10/03 14:54:43 by imusatad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "printf.h"
+#include <unistd.h>
 
-int	ft_printf(char const *input, ...)
+void	ft_putstr(char *str)
 {
-	va_list	args;
-	int		i;
+	int	i;
 
 	i = 0;
-	va_start(args, input);
-	while (input[i])
+	while (str[i])
 	{
-		if (input[i] == '%' && input[i + 1])
-		{
-			i++;
-
-		}
+		write(1, &str[i], 1);
 		i++;
 	}
-	va_end(args);
-	return (1);
 }
 
-int	main(void)
-{
-
-
-	return (0);
-}
