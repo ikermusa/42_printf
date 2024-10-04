@@ -18,7 +18,7 @@
 # include <stdlib.h>
 # include <unistd.h>
 
-void	ft_putchar(char c);
+void	print_char(char c);
 void	print_str(char *str);
 
 

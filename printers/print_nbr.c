@@ -20,18 +20,18 @@ int	ft_putnbr(int n)
 	len = 0;
 	if (n == -2147483648)
 	{
-		ft_putstr("-2147483648");
+		write(1, "-2147483648", 11);
 		return (11);
 	}
 	if (n < 0)
 	{
-		ft_putchar('-');
+		write(1, "-", 1);
 		len++;
 		n = -n;
 	}
 	if (n >= 10)
-		len += ft_putnbr(n / 10);
+		len += print_nbr(n / 10);
 	c = (n % 10) + '0';
-	ft_putchar(c);
+	write(1, &c, 1);
 	return (len + 1);
 }
