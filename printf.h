@@ -18,7 +18,7 @@
 void	print_char(char c);
 int		ft_printf(char const *input, ...);
 int		print_str(char *str);
-int		ft_putnbr(int n);
+int		print_nbr(int n);
 int		print_nbr_unsigned(unsigned int n);
 void	print_per(void);
 int		print_hex(unsigned int n, int uppercase);

@@ -12,7 +12,7 @@
 
 #include <unistd.h>
 
-int	ft_putnbr(int n)
+int	print_nbr(int n)
 {
 	int		len;
 	char	c;
