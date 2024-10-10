@@ -10,16 +10,18 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-# define LIBFT_H
-
-# include <stdio.h>
+#ifndef FT_PRINTF_H
+# define FT_PRINTF_H
 # include <stdarg.h>
-# include <stdlib.h>
 # include <unistd.h>
 
 void	print_char(char c);
-void	print_str(char *str);
-
+int		ft_printf(char const *input, ...);
+int		print_str(char *str);
+int		ft_putnbr(int n);
+int		print_nbr_unsigned(unsigned int n);
+void	print_per(void);
+int		print_hex(unsigned int n, int uppercase);
+int		print_ptr(unsigned long long ptr);
 
 #endif

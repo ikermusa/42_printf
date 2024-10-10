@@ -1,28 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   print_str.c                                        :+:      :+:    :+:   */
+/*   print_nbr_unsigned.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: imusatad <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/03 14:36:49 by imusatad          #+#    #+#             */
-/*   Updated: 2024/10/03 14:54:43 by imusatad         ###   ########.fr       */
+/*   Created: 2024/10/10 09:39:08 by imusatad          #+#    #+#             */
+/*   Updated: 2024/10/10 09:39:21 by imusatad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "printf.h"
 
-int	print_str(char *str)
+int	print_nbr_unsigned(unsigned int n)
 {
-	int	len;
+	int		len;
+	char	c;
 
-	if (!str)
-		str = "(null)";
 	len = 0;
-	while (str[len])
-	{
-		print_char(str[len]);
-		len++;
-	}
-	return (len);
+	if (n >= 10)
+		len += print_nbr_unsigned(n / 10);
+	c = (n % 10) + '0';
+	write(1, &c, 1);
+	return (len + 1);
 }
