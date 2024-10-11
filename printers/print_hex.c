@@ -10,20 +10,30 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "printf.h"
+#include "../ft_printf.h"
 
-int	print_hex(unsigned int n, int uppercase)
+int	print_hex(unsigned long long num, int uppercase)
 {
+	char	buffer[16];
+	int		count;
 	int		len;
 	char	*base;
 
-	len = 0;
+	count = 0;
+	if (num == 0)
+		return (write(1, "0", 1));
 	if (uppercase)
 		base = "0123456789ABCDEF";
 	else
 		base = "0123456789abcdef";
-	if (n >= 16)
-		len += print_hex(n / 16, uppercase);
-	write(1, &base[n % 16], 1);
-	return (len + 1);
+	while (num > 0)
+	{
+		buffer[count++] = base[num % 16];
+		num /= 16;
+	}
+	len = count;
+	while (count--)
+		write(1, &buffer[count], 1);
+	return (len);
 }
+

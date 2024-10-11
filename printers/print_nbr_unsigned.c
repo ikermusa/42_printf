@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "printf.h"
+#include "../ft_printf.h"
 
 int	print_nbr_unsigned(unsigned int n)
 {

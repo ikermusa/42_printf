@@ -10,9 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "printf.h"
-
-int	print_str(char *str);
+#include "ft_printf.h"
 
 int	print_line(char c, va_list args)
 {
@@ -68,7 +66,7 @@ int	ft_printf(char const *input, ...)
 	return (print_ln);
 }
 
-/* int main(void)
+int main(void)
 {
 	int n = 42;
 	unsigned int un = -42;
@@ -143,4 +141,4 @@ int	ft_printf(char const *input, ...)
 	printf("\033[0;32mprintf devolvió: %d\n\033[0m", rlen2);
 	printf("\n\n");
 	return 0;
-} */
+}

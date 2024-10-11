@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "printf.h"
+#include "../ft_printf.h"
 
 int	print_str(char *str)
 {
@@ -21,7 +21,7 @@ int	print_str(char *str)
 	len = 0;
 	while (str[len])
 	{
-		print_char(str[len]);
+		write(1, &str[len], 1);
 		len++;
 	}
 	return (len);
